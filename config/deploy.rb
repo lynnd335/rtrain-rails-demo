@@ -75,9 +75,7 @@ task :setup => :environment do
 
 end
 
-to :launch do
-  queue "service #{user} restart"
-end
+
 
 
 desc "Deploys the current version to the server."
@@ -96,7 +94,7 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      #queue "service #{user} restart"
+      queue "service #{user} restart"
     end
   end
 end
