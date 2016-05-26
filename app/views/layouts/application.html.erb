@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div id="signin-bar">
+<% if current_user %>
+<span><%= current_user.email %></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to 'Sign Out', sign_out_path, method: :delete %>
+<% else %>
+<%=link_to 'Sign Up', new_user_path%>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to 'Sign In', sign_in_path %>
+<% end %>
+</div>
+
 <h1>Rtrain Rails Demo Application</h1>
 
 <div id="main-navbar">
