@@ -1,3 +1,10 @@
+<%if !current_user%>
+  <div id="blank">
+    <div id="alert">
+     <h3>Must be SIGNED IN to add item!</h3>
+    </div>
+   </div> 
+<%end%>
 <%= form_for(@person) do |f| %>
   <% if @person.errors.any? %>
     <div id="error_explanation">
