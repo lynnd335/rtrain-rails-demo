@@ -9,7 +9,7 @@ require 'mina/git'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'rtrain.site'
+set :domain, '162.243.199.203'
 set :user, 'rtrain_rails_demo'
 set :deploy_to, "/home/#{user}/app"
 set :repository, 'git@github.com:lynnd335/rtrain-rails-demo.git'
