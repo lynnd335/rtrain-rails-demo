@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'ffaker'
-gem "rtrain", :path => "/Users/lynnd335/rtrain/"
+gem 'rtrain', '0.2.7'
 gem 'unicorn'
 gem 'mina'
 gem 'authlogic', '3.4.6'
