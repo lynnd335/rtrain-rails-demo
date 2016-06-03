@@ -1,0 +1,6 @@
+$("#person-modal").html("<%= escape_javascript(render 'new') %>");
+$("#person-modal").show();
+$("#person-modal").draggable().resizable({ handles: "n, e, s, w, se, sw, nw, ne" });
+$(".ajax-form-button").click(function(){
+	$("#person-modal").hide();
+})

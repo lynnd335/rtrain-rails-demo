@@ -1,49 +1,51 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  
-  def index
-    @people = Person.all
-  end
 
-  def new
-    @person = Person.new
-  end
+	def index
+	  @people = Person.all
+	end
 
-  def create
-    @person = Person.new(person_params)
+	def show
+	  @people = Person.all
+	end
 
-    if @person.save
-      flash[:notice] = 'Person created'
-      redirect_to @person
-    else
-      flash[:alert] = 'Person not created'
-      render :new
-    end
-  end
+	def new
+	    @person = Person.new
+	end
 
-  def update
-    if @person.update_attributes(person_params)
-      flash[:notice] = 'Person updated'
-      redirect_to @person
-    else
-      flash[:alert] = 'Person not updated'
-      render :edit
-    end      
-  end
+	def edit
+	    @person = Person.find(params[:id])
+	end
 
-  def destroy
-    @person.destroy
-    flash[:notice] = 'Person deleted'
-    redirect_to @person
-  end
+	def create
+	   @people = Person.all
+	   @person = Person.create(person_params)
+	end
 
-  private
+	def update
+	    @people = Person.all
+	    @person = Person.find(params[:id])    
+	    @person.update_attributes(person_params)
+	end
 
+	def delete
+	    @person = Person.find(params[:id])
+	end
+
+	def destroy
+	   @people = Person.all
+	   @person = Person.find(params[:id])
+	   @person.destroy
+	end
+
+private
+    # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])
     end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:description, :deadline)
+      params.require(:person).permit(:name, :address, :phone, :email_address, :about)
     end
-end
+end	

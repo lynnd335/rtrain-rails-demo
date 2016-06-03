@@ -1,2 +1,0 @@
-$('#person-form').html("<%= j (render 'form') %>");
-$('#person-form').slideDown(350);

@@ -1,0 +1,6 @@
+$("#post-modal").html("<%= escape_javascript(render 'edit') %>")
+$("#post-modal").show();
+$("#post-modal").draggable().resizable({ handles: "n, e, s, w, se, sw, nw, ne" });
+$(".ajax-form-button").click(function(){
+	$("#comment-modal").hide();
+})

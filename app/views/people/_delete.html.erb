@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+<span class="modalheader-text">Delete Person</span>
+    <a class="modalheader-a" href ="#"><img class="xbutton" style="float: right;" height="12px" width="12px" src="close-button.png"></a>  
+    </div>
+  <div class="modal-body">
+  <ul class="errors"></ul>
+  Are you sure you wish to delete <b><%= @person.name %></b>?
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Yes, Delete This Person", person_path(@person), method: :delete, remote: true, class: "btn btn-danger" %>
+    <%= link_to "No, Please Don't", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
+  </div>
+  </div>
+</div>
