@@ -181,7 +181,7 @@ DEPENDENCIES
   pg (~> 0.15)
   rails (= 4.2.6)
   responders (~> 2.0)
-  rtrain (= 0.2.7)
+  rtrain
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
