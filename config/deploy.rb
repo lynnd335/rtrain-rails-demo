@@ -28,12 +28,12 @@ set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 # `mina deploy` or `mina rake`.
 task :environment do
   # ruby_version = RUBY_VERSION
-  ruby_version = File.read('.ruby-version').strip
-  raise "Couldn't determine Ruby version: Do you have a file .ruby-version in your project root?" if ruby_version.empty?
-  queue %{
-    source /etc/profile.d/rvm.sh
-    rvm use #{ruby_version} || exit 1
-  }
+  # ruby_version = File.read('.ruby-version').strip
+  # raise "Couldn't determine Ruby version: Do you have a file .ruby-version in your project root?" if ruby_version.empty?
+  # queue %{
+  #   source /etc/profile.d/rvm.sh
+  #   rvm use #{ruby_version} || exit 1
+  # }
 end
 
 task :setup => :environment do
