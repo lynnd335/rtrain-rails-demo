@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	wrap_parameters format: [:json, :xml, :url_encoded_form, :multipart_form]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 	def index
